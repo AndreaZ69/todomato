@@ -14,12 +14,6 @@ Nella struttura dati si identificano 3 (tre) entità principali: Utente, Calenda
   - updateUtente
   - deleteUtente
 
-- Calendario: array di oggetti
-
-  - addAttività
-  - updateAttività
-  - deleteAttività
-
 - Attività
 
   - addAttività
