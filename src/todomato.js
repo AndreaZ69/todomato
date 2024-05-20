@@ -1,10 +1,12 @@
+/** @format */
+
 class TodoMato {
   #users = new ControllerUsers(); //tutti gli utenti
-  #todos = new;
-  #timers = new;
+  #todos = new ControllTodos();
+  #timers = new ControllTimers();
   //userLogged = []; //l'utente loggato
   //userLogged = {
-    /*true o false*/
+  /*true o false*/
   //};
   signup(username, password, email) {
     this.users.create(username, password, email);
@@ -21,5 +23,4 @@ class TodoMato {
   getUser() {
     return this.#user;
   }
-
-};
+}

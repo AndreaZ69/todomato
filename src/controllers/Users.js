@@ -1,4 +1,6 @@
-const ModelUser = require("../models/User.js");
+/** @format */
+
+const ModelUser = require('../models/User.js');
 
 class ControllerUsers {
   #users = [];
@@ -19,4 +21,4 @@ class ControllerUsers {
   }
 }
 const daba = new ControllerUsers();
-daba.create("dab", "dab", "dab");
+daba.create('dab', 'dab', 'dab');

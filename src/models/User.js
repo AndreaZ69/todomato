@@ -1,3 +1,5 @@
+/** @format */
+
 class ModelUser {
   constructor(username, name, email, password, descrizione) {
     this.id = Math.random();
