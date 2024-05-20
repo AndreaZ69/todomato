@@ -8,3 +8,4 @@ class ModelTodo {
     //da agg poi giorno x avrai una determinata attività da svolgere
   }
 }
+module.exports = ModelTodo;
