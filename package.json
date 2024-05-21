@@ -2,7 +2,7 @@
   "name": "todomato",
   "version": "1.0.0",
   "description": "Applicazione che combina una lista ToDo con la tecnica del pomodoro.",
-  "main": "index.js",
+  "main": "src/todomato.js",
   "lint-staged": {
     "./src/**/**/*.{js,html,css}": [
       "npm run format"
@@ -12,7 +12,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write .",
     "test:lint": "eslint .",
-    "prepare": "husky"
+    "prepare": "husky install",
+    "commit-check": "node scripts/commit-check.js"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "npm run commit-check $1"
+    }
   },
   "validate-branch-name": {
     "pattern": "^(main){1}$|^(feat)(/[a-z-]+){1,2}$|^(bugfix)/[a-z-]+$|^(chore)/[a-z-]+$|^(docs)/[a-z-]+$",
