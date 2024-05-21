@@ -1,5 +1,5 @@
-const Timer = require("./Timer.js");
-const Todo = require("./Todo.js");
+const ModelTimer = require("./Timer.js");
+const ModelTodo = require("./Todo.js");
 
 class ModelTodoTimer {
   constructor(idTodo, idTimer) {
