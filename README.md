@@ -2,34 +2,62 @@
 
 # Todomato
 
-Una WebApp che consente tramite un gestionale ToDoList combinato con la tecnica del pomodoro, di gestire le proprie attività.
+Una WebApp che combina una ToDoList con la tecnica del pomodoro per gestire le proprie attività impostando dei timer.
+
+## Introduzione
+
+Todomato ti aiuta a gestire le tue attività quotidiane utilizzando la tecnica del pomodoro, migliorando così la tua produttività. Puoi creare, leggere, aggiornare e cancellare le tue attività e impostare timer per gestire il tempo dedicato a ciascuna di esse.
+
+<!-- ## Screenshot -->
+
+<!-- ![Screenshot della WebApp](path/to/screenshot.png) -->
+
+## Features
+
+- Creazione e gestione di utenti
+- Aggiunta, lettura, aggiornamento e cancellazione di attività (ToDo)
+- Impostazione e gestione di timer per le attività
+- Visualizzazione dello stato delle attività e dei timer
+
+## Documentazione
+
+- User
+  - create
+  - read
+  - update
+  - delete
+  - get
+- Todo
+  - addTodo
+  - readTodo
+  - updateTodo
+  - updateTodoDescription
+  - deleteTodo
+  - getTodo
+- Timer
+  - create
+  - read
+  - update
+  - delete
 
 ## Struttura base dati
 
-Nella struttura dati si identificano 3 (tre) entità principali: User, Todo, Timer
+La struttura dati identifica tre entità principali: User, Todo, Timer.
 
-- User
+## Modelli costruttori
 
-  - create
-  - read
-  - update
-  - delete
-
-- Todo
-
-  - create
-  - read
-  - update
-  - delete
+Modelli costruttori presenti:
 
 - Timer
-  - addTimer
-  - addPause
-  - updateTimer
-  - updatePause
-  - skipTimer
-  - deleteTimer
-  - deletePause
-  - resetTimer
+- Todo
+- TodoTimer (ponte tra Timer e Todo)
+- User
 
-## Implementazione di DataBase
+## Credits
+
+Questo progetto è sviluppato da:
+
+- **Alessio Di Noto** - [GitHub](https://github.com/AlessioDiNoto)
+- **AndreaZ69** - [GitHub](https://github.com/AndreaZ69)
+- **Emanuele Fava** - [GitHub](https://github.com/EmanueleFava)
+- **Francesco Urso** - [GitHub](https://github.com/francesco-urso)
