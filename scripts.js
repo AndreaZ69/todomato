@@ -1,3 +1,5 @@
+/** @format */
+
 class TodoMato {
   users = []; //tutti gli utenti
   userLogged = []; //l'utente loggato
@@ -55,13 +57,7 @@ class Badges {
   }
 }
 const game = new TodoMato();
-const user1 = new User(
-  "user1",
-  "Mario Rossi",
-  "XXXXXXXXXXXXXXXXXXXXX",
-  "123",
-  "Mario Rossi"
-);
+const user1 = new User('user1', 'Mario Rossi', 'XXXXXXXXXXXXXXXXXXXXX', '123', 'Mario Rossi');
 console.log(user1);
 game.addUser(user1);
 console.log(game.getUsers());

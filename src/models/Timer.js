@@ -1,3 +1,5 @@
+/** @format */
+
 class ModelTimer {
   constructor(dataInizio, dataFine) {
     this.idTimer = Math.random();

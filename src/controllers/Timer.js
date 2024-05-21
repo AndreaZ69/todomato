@@ -1,4 +1,6 @@
-const ModelTimer = require("../models/Timer.js");
+/** @format */
+
+const ModelTimer = require('../models/Timer.js');
 
 class ControllerTimer {
   timer = null;
