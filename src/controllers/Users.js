@@ -11,7 +11,7 @@ class ControllerUsers {
   update(id, username, password, email) {}
   delete(id) {}
   get(username, password) {
-    const userFound = this.users.find(function (user) {
+    const userFound = this.#users.find(function (user) {
       if (user.username === username && user.password === password) return true;
       return false;
     });
