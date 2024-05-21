@@ -1,6 +1,4 @@
-/** @format */
-
-const ModelUser = require('../models/Todo.js');
+const ModelTodo = require("../models/Todo.js");
 
 class ControllerTodo {
   #todo = [];
@@ -13,9 +11,10 @@ class ControllerTodo {
   readTodo(todoId) {
     const todoFound = this.#todo.find(function (element) {
       if (element.todoId === todoId) {
-        return todoFound;
+        return true;
       } else return false;
     });
+    return todoFound;
   }
 
   updateTodoName(todoId, newName) {
@@ -36,16 +35,20 @@ class ControllerTodo {
   deleteTodo(todoId) {
     this.#todo = this.#todo.filter(function (element) {
       if (element.todoId === todoId) {
-        return true;
-      } else return false;
+        return false;
+      } else return true;
     });
   }
 
   getTodo(todoId) {
     const todoGot = this.#todo.find(function (element) {
       if (todoId === todo.todoId) {
-        return todoGot;
-      } else return false;
+        return true;
+        return false;
+      }
     });
+    return todoGot;
   }
 }
+
+module.exports = ControllerTodo;
