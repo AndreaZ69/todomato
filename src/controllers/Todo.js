@@ -39,16 +39,6 @@ class ControllerTodo {
       } else return true;
     });
   }
-
-  getTodo(todoId) {
-    const todoGot = this.#todo.find(function (element) {
-      if (todoId === todo.todoId) {
-        return true;
-        return false;
-      }
-    });
-    return todoGot;
-  }
 }
 
 module.exports = ControllerTodo;
