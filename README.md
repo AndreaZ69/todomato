@@ -16,9 +16,16 @@ Todomato ti aiuta a gestire le tue attività quotidiane utilizzando la tecnica d
 
 ### _Versione 1.0.0_
 
-- Creazione e gestione di utenti (login, logout, sign in)
-- Aggiunta, lettura, aggiornamento e cancellazione di attività (ToDo)
-- Impostazione e gestione di timer per le attività
+- Come utente voglio poter creare un account
+- Come utente voglio poter fare login e logout dall'applicazione
+- Come utente voglio poter modificare i miei dati
+- Come utente voglio poter creare una todo list
+- Come utente voglio poter modificare e cancellare gli elementi nella todo
+- Come utente voglio poter cancellare la todo list
+- Come utente voglio poter creare un timer
+- Come utente voglio poter impostare la durata del timer
+- Come utente voglio poter mettere il timer in pausa e riavviarlo
+- Come utente voglio poter cancellare un timer
 <!-- - Visualizzazione dello stato delle attività e dei timer -->
 
 ## Documentazione
