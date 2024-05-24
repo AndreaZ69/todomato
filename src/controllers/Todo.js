@@ -1,6 +1,4 @@
-/** @format */
-
-const ModelTodo = require('../models/Todo.js');
+const ModelTodo = require("../models/Todo.js");
 
 class ControllerTodo {
   #todo = [];
@@ -22,18 +20,25 @@ class ControllerTodo {
   updateTodoName(todoId, newName) {
     this.#todo = this.#todo.map(function (element) {
       if (element.todoId === todoId) {
-        element.nomeAttivita = newName;
-      }
+        return {
+          ...element,
+          nomeAttivita: newName,
+        };
+      } else return element;
     });
   }
 
   updateTodoDescription(todoId, newDescription) {
     this.#todo = this.#todo.map(function (element) {
       if (element.todoId === todoId) {
-        element.description = newDescription;
-      }
+        return {
+          ...element,
+          description: newDescription,
+        };
+      } else return element;
     });
   }
+
   deleteTodo(todoId) {
     this.#todo = this.#todo.filter(function (element) {
       if (element.todoId === todoId) {
