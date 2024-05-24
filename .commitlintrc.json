@@ -4,6 +4,10 @@
     "header-max-length": [2, "always", 100],
     "type-enum": [2, "always", ["chore", "docs", "feat", "fix", "refactor"]],
     "scope-case": [2, "always", "lower-case"],
-    "scope-enum": [2, "always", ["group", "alessio_di_noto", "andrea_militano", "emanuele_fava", "francesco_urso"]]
+    "scope-enum": [
+      2,
+      "always",
+      ["group", "alessio_di_noto", "andrea_militano", "emanuele_fava", "francesco_urso", "riccardo_genova"]
+    ]
   }
 }
