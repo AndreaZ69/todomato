@@ -3,20 +3,34 @@
 const ModelTimer = require('../models/Timer.js');
 
 class ControllerTimer {
-  timer = null;
-  create(dataFine) {
-    const dataInizio = new Date();
-    timer = new ModelTimer(dataInizio.getTime(), dataFine.getTime());
+
+  create(minutes) {
+    const dataInizio = new Date().getSeconds();
+    let dataFine = new Date().getSeconds();
+    dataFine = dataFine + (minutes*60);
+    const seconds = dataFine - dataInizio;
+    const timer = new ModelTimer(dataInizio, dataFine, seconds);
+    return this.timer = timer;
   }
+  
   read() {
-    let time = Math.round(dataFine.getMinutes() - dataInizio.getMinutes());
-    return time;
+    if (this.timer.seconds >= 59){
+      const time = this.timer.seconds / 60
+      return time;
+    }
+    return this.timer.seconds;
   }
-  update(NewDataFine) {
-    const dataInizio = new Date();
-    timer.dataFine = NewDataFine;
+  
+  update(minutes) {
+
   }
   delete() {
-    timer = null;
+    this.timer = null;
   }
-}
+};
+
+const date = new ControllerTimer();
+date.create(15);
+console.log(date);
+
+console.log(date.read());
