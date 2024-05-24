@@ -13,14 +13,14 @@ class TodoMato {
   }
 
   login(username, password) {
-    this.#user = this.users.get(username, password);
+    this.#users = this.users.get(username, password);
   }
 
   logout() {
-    this.#user = null;
+    this.#users = null;
   }
 
   getUser() {
-    return this.#user;
+    return this.#users;
   }
 }
