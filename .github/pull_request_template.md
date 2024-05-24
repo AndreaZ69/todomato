@@ -10,6 +10,7 @@ _Includi un riassunto delle modifiche e delle problematiche risolte_
 - [ ] 🆕 Nuova funzionalità
 - [ ] 💄 Aggiustamento
 - [ ] 💥 Modifica importante
+- [ ] 📄 Inserimento nuovo documento
 
 ## Testato su - seleziona il tipo di dispositivo rilevante:
 
