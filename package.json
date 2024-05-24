@@ -21,7 +21,7 @@
     }
   },
   "validate-branch-name": {
-    "pattern": "^(main){1}$|^(feat)(/[a-z-]+){1,2}$|^(bugfix)/[a-z-]+$|^(chore)/[a-z-]+$|^(docs)/[a-z-]+$",
+    "pattern": "^(main){1}$|^(feat)(/[a-z-]+){1,2}$|^(bugfix)/[a-z-]+$|^(chore)/[a-z-]+$|^(docs)/[a-z-]+$^(fix)/[a-z-]+$",
     "errorMsg": "There is something wrong with your branch name. Your commit will be rejected. You should rename your branch to a valid name and try again."
   },
   "author": "",
