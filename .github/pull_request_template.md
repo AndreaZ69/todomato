@@ -15,6 +15,7 @@ _Includi un riassunto delle modifiche e delle problematiche risolte_
 
 ## Testato su - seleziona il tipo di dispositivo rilevante:
 
+- [ ] vsCode
 - [ ] Chrome
 - [ ] Firefox
 - [ ] Brave
