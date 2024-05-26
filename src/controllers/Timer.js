@@ -30,6 +30,7 @@ class ControllerTimer {
     return this.timer = timer;
     //
   }
+  
   delete() {
     this.timer = null;
   }
