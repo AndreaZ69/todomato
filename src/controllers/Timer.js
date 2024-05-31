@@ -15,22 +15,24 @@ class ControllerTimer {
   
   read() {
     if (this.timer.seconds >= 59){
-      const time = this.timer.seconds / 60
+      const time = Math.round(this.timer.seconds / 60)
       return time;
     }
     return this.timer.seconds;
   }
   
   update(minutes) {
-
+    // Update per aggiornare i minuti, quello per metterlo in pausa sarà un'altra funzione
+    let dataFine = new Date().getSeconds();
+    dataFine = Math.round(dataFine + (minutes*60));
+    const seconds = dataFine - this.timer.dataInizio;
+    const timer = new ModelTimer(this.timer.dataInizio, dataFine, seconds);
+    return this.timer = timer;
+    //
   }
+  
   delete() {
     this.timer = null;
   }
 };
 
-const date = new ControllerTimer();
-date.create(15);
-console.log(date);
-
-console.log(date.read());
