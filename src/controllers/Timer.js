@@ -8,8 +8,7 @@ class ControllerTimer {
     const dataFine = new Date(dataInizio.getTime() + minutes * 60000);
     const seconds = (dataFine - dataInizio) / 1000;
     const timer = new ModelTimer(dataInizio, dataFine, seconds);
-    this.timer = timer;
-    return timer;
+    return (this.timer = timer);
   }
 
   read() {
