@@ -3,36 +3,30 @@
 const ModelTimer = require('../models/Timer.js');
 
 class ControllerTimer {
-
   create(minutes) {
-    const dataInizio = new Date().getSeconds();
-    let dataFine = new Date().getSeconds();
-    dataFine = dataFine + (minutes*60);
-    const seconds = dataFine - dataInizio;
+    const dataInizio = new Date();
+    const dataFine = new Date(dataInizio.getTime() + minutes * 60000);
+    const seconds = (dataFine - dataInizio) / 1000;
     const timer = new ModelTimer(dataInizio, dataFine, seconds);
-    return this.timer = timer;
+    return (this.timer = timer);
   }
-  
+
   read() {
-    if (this.timer.seconds >= 59){
-      const time = Math.round(this.timer.seconds / 60)
-      return time;
+    const currentTime = new Date();
+    const remainingSeconds = (this.timer.dataFine - currentTime) / 1000;
+
+    if (remainingSeconds >= 60) {
+      return remainingSeconds / 60;
     }
-    return this.timer.seconds;
+    return remainingSeconds;
   }
-  
-  update(minutes) {
-    // Update per aggiornare i minuti, quello per metterlo in pausa sarà un'altra funzione
-    let dataFine = new Date().getSeconds();
-    dataFine = Math.round(dataFine + (minutes*60));
-    const seconds = dataFine - this.timer.dataInizio;
-    const timer = new ModelTimer(this.timer.dataInizio, dataFine, seconds);
-    return this.timer = timer;
-    //
-  }
-  
+
+  update(minutes) {}
   delete() {
     this.timer = null;
   }
-};
 
+  delete() {
+    this.timer = null;
+  }
+}
