@@ -1,3 +1,5 @@
+/** @format */
+
 class ModelTodo {
   constructor(nomeAttivita, description) {
     this.todoId = Math.random();
@@ -5,8 +7,8 @@ class ModelTodo {
     this.description = description;
     this.status = false;
     this.date = new Date();
-    this.timer = new Timer(nomeAttivita, date, timer, durata);
+    this.timer = null; // Inizialmente null, può essere impostato dopo
   }
 }
 
-module.exports = ModelTodo;
+export { ModelTodo };

@@ -1,4 +1,6 @@
-const ModelTodo = require("../models/Todo.js");
+/** @format */
+
+import { ModelTodo } from '../models/Todo.js';
 
 class ControllerTodo {
   #todo = [];
@@ -6,54 +8,30 @@ class ControllerTodo {
   addTodo(nomeAttivita, description) {
     const todo = new ModelTodo(nomeAttivita, description);
     this.#todo.push(todo);
+    return todo;
   }
 
   readTodo(todoId) {
-    const todoFound = this.#todo.find(function (element) {
-      if (element.todoId === todoId) {
-        return true;
-      } else return false;
-    });
-    return todoFound;
+    return this.#todo.find(element => element.todoId === todoId);
   }
 
   updateTodoName(todoId, newName) {
-    this.#todo = this.#todo.map(function (element) {
-      if (element.todoId === todoId) {
-        return {
-          ...element,
-          nomeAttivita: newName,
-        };
-      } else return element;
-    });
+    const todo = this.readTodo(todoId);
+    if (todo) {
+      todo.nomeAttivita = newName;
+    }
   }
 
   updateTodoDescription(todoId, newDescription) {
-    this.#todo = this.#todo.map(function (element) {
-      if (element.todoId === todoId) {
-        return {
-          ...element,
-          description: newDescription,
-        };
-      } else return element;
-    });
-  }
-
-  toggleTodoStatus(todoId) {
-    this.#todo = this.#todo.map(function (element) {
-      if (element.todoId === todoId) {
-        return { ...element, status: !element.status };
-      } else return element;
-    });
+    const todo = this.readTodo(todoId);
+    if (todo) {
+      todo.description = newDescription;
+    }
   }
 
   deleteTodo(todoId) {
-    this.#todo = this.#todo.filter(function (element) {
-      if (element.todoId === todoId) {
-        return false;
-      } else return true;
-    });
+    this.#todo = this.#todo.filter(element => element.todoId !== todoId);
   }
 }
 
-module.exports = ControllerTodo;
+export { ControllerTodo };
