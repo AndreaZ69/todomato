@@ -39,6 +39,14 @@ class ControllerTodo {
     });
   }
 
+  toggleTodoStatus(todoId) {
+    this.#todo = this.#todo.map(function (element) {
+      if (element.todoId === todoId) {
+        return { ...element, status: !element.status };
+      } else return element;
+    });
+  }
+
   deleteTodo(todoId) {
     this.#todo = this.#todo.filter(function (element) {
       if (element.todoId === todoId) {
