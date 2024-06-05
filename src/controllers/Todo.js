@@ -1,4 +1,6 @@
-const ModelTodo = require("../models/Todo.js");
+/** @format */
+
+const ModelTodo = require('../models/Todo.js');
 
 class ControllerTodo {
   #todo = [];

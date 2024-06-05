@@ -1,3 +1,5 @@
+/** @format */
+
 class ModelTodo {
   constructor(nomeAttivita, description) {
     this.todoId = Math.random();
