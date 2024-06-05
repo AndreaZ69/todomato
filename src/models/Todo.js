@@ -5,6 +5,7 @@ class ModelTodo {
     this.description = description;
     this.status = false;
     this.date = new Date();
+    this.timer = new Timer(nomeAttivita, date, timer, durata);
   }
 }
 
