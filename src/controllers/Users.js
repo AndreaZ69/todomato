@@ -40,7 +40,7 @@ class ControllerUsers {
     });
   }
 
-  updateEmeail(id, newEmail) {
+  updateEmail(id, newEmail) {
     this.#users = this.#users.map(function (element) {
       if (element.id === id) {
         return {
@@ -80,6 +80,7 @@ class ControllerUsers {
     });
   }
 
+  //questo serve per effettuare l'accesso
   getUsername(username, password) {
     const userFound = this.#users.find(function (user) {
       if (user.username === username && user.password === password) return true;
@@ -95,6 +96,7 @@ class ControllerUsers {
     });
     return userFound;
   }
+  //
 }
 const daba = new ControllerUsers();
 daba.create('dab', 'dab', 'dab');
