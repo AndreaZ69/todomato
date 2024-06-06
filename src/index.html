@@ -1,43 +1,25 @@
 <!-- @format -->
 
 <!doctype html>
-<html>
+
+<html lang="it">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>todoMato</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List con Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="utente">Utente</div>
     <div class="container">
-      <div class="list">
-        <div class="lista">ToDoList</div>
-        <form id="lista">
-          <input id="lista" type="text" placeholder="Inserisci attività" />
-          <button type="submit">Aggiungi</button>
-        </form>
-        <ul id="todoList"></ul>
-      </div>
-      <div>
-        <div class="timer">Timer</div>
-        <form id="lista">
-          <input id="timer" type="number" placeholder="Inserisci durata timer" />
-          <button type="submit">Aggiungi</button>
-        </form>
-        <ul id="timerList"></ul>
-      </div>
+      <h1>Todo List con metodo Pomodoro</h1>
+      <form id="todo-form">
+        <input type="text" id="todo-name" placeholder="Nome Attività" required />
+        <input type="text" id="todo-description" placeholder="Descrizione" required />
+        <button type="submit">Aggiungi</button>
+      </form>
+      <ul id="todo-list"></ul>
     </div>
+    <script type="module" src="todomato.js"></script>
 
-    <script src="./controllers/Timer.js"></script>
-    <script src="./controllers/Todo.js"></script>
-    <script src="./controllers/Users.js"></script>
-    <script src="./models/Timer.js"></script>
-    <script src="./models/Todo.js"></script>
-    <script src="./models/Users.js"></script>
-    <script src="./models/TodoTimer.js"></script>
-    <script src="todomato.js"></script>
   </body>
 </html>
