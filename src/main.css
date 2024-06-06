@@ -1,0 +1,24 @@
+/** @format */
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 35vh;
+}
+
+.utente {
+  margin-top: 5vh;
+  margin-left: 8vh;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
