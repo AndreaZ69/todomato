@@ -7,7 +7,7 @@ class ModelTodo {
     this.description = description;
     this.status = false;
     this.date = new Date();
-    this.timer = null; // Inizialmente null, può essere impostato dopo
+    this.timer = null;
   }
 }
 

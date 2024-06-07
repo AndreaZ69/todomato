@@ -96,7 +96,4 @@ class ControllerUsers {
     });
     return userFound;
   }
-  //
 }
-const daba = new ControllerUsers();
-daba.create('dab', 'dab', 'dab');
