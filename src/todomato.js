@@ -145,3 +145,4 @@ function moveTodoToCompleted(todo) {
   completedItem.textContent = `${todo.nomeAttivita}: ${todo.description}`;
   completedList.appendChild(completedItem);
 }
+//prova
