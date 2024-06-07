@@ -1,99 +1,29 @@
 /** @format */
 
-const ModelUser = require('../models/User.js');
+import { ModelUser } from '../models/User.js';
 
 class ControllerUsers {
-  #users = [];
-
-  createUser(username, name, email, password, descrizione) {
-    const user = new ModelUser(username, name, email, password, descrizione);
-    this.#users.push(user);
-  }
-  readUser(id) {
-    const idUtente = this.#users.find(function (element) {
-      if (element.id === id) {
-        return true;
-      } else return false;
-    });
-    return idUtente;
+  constructor() {
+    this.users = JSON.parse(localStorage.getItem('users')) || [];
   }
 
-  updateUsername(id, newUsername) {
-    this.#users = this.#users.map(function (element) {
-      if (element.id === id) {
-        return {
-          ...element,
-          username: newUsername,
-        };
-      } else return element;
-    });
+  saveUsers() {
+    localStorage.setItem('users', JSON.stringify(this.users));
   }
 
-  updateName(id, newName) {
-    this.#users = this.#users.map(function (element) {
-      if (element.id === id) {
-        return {
-          ...element,
-          name: newName,
-        };
-      } else return element;
-    });
+  createUser(username, name, email, password) {
+    const user = new ModelUser(username, name, email, password);
+    this.users.push(user);
+    this.saveUsers();
   }
 
-  updateEmail(id, newEmail) {
-    this.#users = this.#users.map(function (element) {
-      if (element.id === id) {
-        return {
-          ...element,
-          email: newEmail,
-        };
-      } else return element;
-    });
-  }
-
-  updatePassword(id, newPassword) {
-    this.#users = this.#users.map(function (element) {
-      if (element.id === id) {
-        return {
-          ...element,
-          password: newPassword,
-        };
-      } else return element;
-    });
-  }
-
-  updateDescrizione(id, newDescrizione) {
-    this.#users = this.#users.map(function (element) {
-      if (element.id === id) {
-        return {
-          ...element,
-          descrizione: newDescrizione,
-        };
-      } else return element;
-    });
-  }
-
-  delete(id) {
-    this.#users = this.#users.filter(function (element) {
-      if (element.id === id) return false;
-      return true;
-    });
-  }
-
-  //questo serve per effettuare l'accesso
   getUsername(username, password) {
-    const userFound = this.#users.find(function (user) {
-      if (user.username === username && user.password === password) return true;
-      return false;
-    });
-    return userFound;
+    return this.users.find(user => user.username === username && user.password === password);
   }
 
   getEmail(email, password) {
-    const userFound = this.#users.find(function (user) {
-      if (user.email === email && user.password === password) return true;
-      return false;
-    });
-    return userFound;
+    return this.users.find(user => user.email === email && user.password === password);
   }
 }
+
+export { ControllerUsers };
