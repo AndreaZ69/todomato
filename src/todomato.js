@@ -25,11 +25,6 @@ todoForm.addEventListener('submit', function (event) {
   todoDescriptionInput.value = '';
 });
 
-logoutButton.addEventListener('click', function () {
-  // Esegui eventuali operazioni di logout necessarie, come cancellare i dati dell'utente, token, ecc.
-  window.location.href = 'login.html'; // Reindirizza alla pagina di login
-});
-
 function addTodoToDOM(todo) {
   const li = document.createElement('li');
   li.setAttribute('data-id', todo.todoId);
@@ -119,7 +114,7 @@ function addTodoToDOM(todo) {
   li.appendChild(timerControls);
   todoList.appendChild(li);
 
-  // Update the timer display every second
+  // Update del timer ogni secondo
   const intervalId = setInterval(() => {
     if (todo.timer && !todo.timer.isPaused) {
       const remainingTime = controllerTimer.read(todo.timer);
@@ -145,4 +140,3 @@ function moveTodoToCompleted(todo) {
   completedItem.textContent = `${todo.nomeAttivita}: ${todo.description}`;
   completedList.appendChild(completedItem);
 }
-//prova
