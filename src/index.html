@@ -1,16 +1,36 @@
-<!-- @format -->
-
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Welcome</h1>
-    <a href="register.html">Registrazione</a>
-    <a href="login.html">Login</a>
-  </body>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LandingPage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo"><img src="./img/toDoMato.svg" alt="todoMato"></div>
+            <div class="links">
+                <a href="./login.html"><button class="btnLogIn">Login</button></a>
+            </div>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logoHero"><img src="./img/toDoMatoLogo.svg" alt="Logo Hero"></div>
+            <div class="hero-text">
+                <h1>Benvenuti su Todomato!</h1>
+                <p>Organizza le tue attività e migliora la tua produttività con il nostro Timer Pomodoro. Lasciati accompagnare dal nostro simpatico pomodoro mascotte!</p>
+                <a href="./register.html"><button class="btn-primary">Registrati</button></a>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="containerImg"><img src="./img/todomatoRoom.png" alt="room"></div>
+        <div class="containerContent">
+            <h1 class="contentTitle">Scopri Todomato: La tua soluzione definitiva per la gestione del tempo!</h1>
+            <p class="contentParagraph">Hai mai avuto difficoltà a gestire il tuo tempo e le tue attività quotidiane? Todomato è qui per aiutarti! Il nostro sistema basato sul metodo Pomodoro non solo ti aiuta a mantenere la concentrazione, ma rende anche la gestione delle tue attività divertente e coinvolgente.</p>
+        </div>
+    </div>
+</body>
 </html>
