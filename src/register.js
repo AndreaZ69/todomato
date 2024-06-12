@@ -12,10 +12,10 @@ document.getElementById('registerForm')?.addEventListener('submit', function (e)
   const password = document.getElementById('password').value;
 
   userRegister.createUser(username, name, email, password);
-  document.getElementById('registerMessage').innerText = 'User registered successfully!';
+  document.getElementById('registerMessage').innerText = 'Utente registrato!';
   document.getElementById('registerForm').reset();
 
   setTimeout(() => {
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
   }, 2000);
 });

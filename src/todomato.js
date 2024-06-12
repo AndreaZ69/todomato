@@ -39,7 +39,7 @@ function addTodoToDOM(todo) {
 
   const timerSpan = document.createElement('span');
   timerSpan.className = 'timer';
-  timerSpan.textContent = ' (No timer)';
+  timerSpan.textContent = '(--:--)';
 
   const timerControls = document.createElement('div');
   timerControls.className = 'timer-controls';
@@ -119,12 +119,12 @@ function addTodoToDOM(todo) {
     if (todo.timer && !todo.timer.isPaused) {
       const remainingTime = controllerTimer.read(todo.timer);
       if (remainingTime.minutes > 0 || remainingTime.seconds > 0) {
-        timerSpan.textContent = ` (${remainingTime.minutes}m ${remainingTime.seconds}s)`;
+        timerSpan.textContent = ` (${remainingTime.minutes} : ${remainingTime.seconds})`;
       } else {
         if (todo.timer.isPomodoro) {
           todo.timer = controllerTimer.nextPomodoroSession(todo.timer);
           const newTimeRemaining = controllerTimer.read(todo.timer);
-          timerSpan.textContent = ` (${newTimeRemaining.minutes}m ${newTimeRemaining.seconds}s)`;
+          timerSpan.textContent = ` (${newTimeRemaining.minutes} : ${newTimeRemaining.seconds})`;
         } else {
           timerSpan.textContent = " (Time's up!)";
           moveTodoToCompleted(todo);
