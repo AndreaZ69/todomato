@@ -9,18 +9,49 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h2>Login</h2>
-    <form id="loginForm">
-      <label for="loginUsername">Username:</label>
-      <input type="text" id="loginUsername" name="username" />
-      <label for="loginEmail">Email:</label>
-      <input type="email" id="loginEmail" name="email" />
-      <label for="loginPassword">Password:</label>
-      <input type="password" id="loginPassword" name="password" required />
-      <button type="submit">Login</button>
-    </form>
-    <div class="message" id="loginMessage"></div>
-
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="./index.html"><img src="./img/toDoMato.svg" alt="todoMato" /></a>
+        </div>
+        <div class="links">
+          <a href="./login.html"><button class="btnLogIn">Login</button></a>
+        </div>
+      </nav>
+    </header>
+    <div id="loginFormContainer">
+      <div id="loginBlock">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <label for="loginUsername">Username:</label>
+          <input type="text" id="loginUsername" name="username" placeholder="Username" />
+          <label for="loginEmail">Email:</label>
+          <input type="email" id="loginEmail" name="email" placeholder="Email" />
+          <label for="loginPassword">Password:</label>
+          <input type="password" id="loginPassword" name="password" required placeholder="Password" />
+          <button type="submit">Login</button>
+          <p>o</p>
+          <button><a href="register.html">Registrati</a></button>
+        </form>
+        <div class="message" id="loginMessage"></div>
+      </div>
+    </div>
     <script type="module" src="login.js"></script>
+    <footer>
+      <div class="left">
+        <img
+          src="./img/kisspng-github-computer-icons-github-logo-5b459a3d4de4a5.6554725315312881253191.png"
+          alt="github"
+        />
+      </div>
+      <div class="center">
+        <a href="#top">
+          <img src="./img/up.png" alt="torna su" />
+        </a>
+      </div>
+      <div class="right">
+        <a href="./index.html"><img src="./img/toDoMato.svg" alt="todoMato" /></a>
+      </div>
+    </footer>
   </body>
 </html>
