@@ -16,24 +16,31 @@
         </div>
       </nav>
     </header>
-    <div class="container">
-      <section class="section">
-        <form id="todo-form" class="card todo-form">
-          <img src="./img/toDoMatoscritta.svg" alt="todoMAtor" />
-          <input type="text" id="todo-name" placeholder="Nome Attività" required />
-          <input type="text" id="todo-description" placeholder="Descrizione" required />
-          <button type="submit">Aggiungi</button>
-        </form>
-        <div class="card completed-list-card">
-          <h2>Attività Completate</h2>
-          <ul id="completed-list"></ul>
+    <main>
+      <div class="container">
+        <section class="section">
+          <form id="todo-form" class="card todo-form">
+            <img src="./img/toDoMatoscritta.svg" alt="todoMAtor" />
+            <input type="text" id="todo-name" placeholder="Nome Attività" required />
+            <input type="text" id="todo-description" placeholder="Descrizione" required />
+            <button type="submit">Aggiungi</button>
+          </form>
+          <div class="card completed-list-card">
+            <h2>Attività Completate</h2>
+            <ul id="completed-list"></ul>
+          </div>
+        </section>
+        <div class="card todo-list-card">
+          <img src="./img/frontal3.jpg" alt="todoface" />
+          <video autoplay loop muted height="200vh" width="300vh">
+            <source src="./video/tomotion.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <h1>TodoTime!</h1>
+          <ul id="todo-list"></ul>
         </div>
-      </section>
-      <div class="card todo-list-card">
-        <h2>Attività da completare</h2>
-        <ul id="todo-list"></ul>
       </div>
-    </div>
+    </main>
     <script type="module" src="todomato.js"></script>
     <footer>
       <div class="left">
