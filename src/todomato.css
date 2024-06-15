@@ -117,13 +117,14 @@ header {
 }
 
 .todo-list-card {
-  width: 43%;
-  margin-left: 5vh;
+  
+  text-align:center;
+  width: auto;
+  margin-left: auto;
 }
 
 .todo-list-card img {
-  width: 30vh;
-  margin-left: 7vh;
+  width: 20vh;
 }
 
 .todo-list-card h1 {
@@ -140,12 +141,12 @@ header {
   padding: 50px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding-left: 3vh;
+  /*padding-left: 3vh;*/
 }
 
 .card input {
   margin-top: 2vh;
-  margin-left: 2vh;
+  /*margin-left: 2vh;*/
   width: 98%;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -156,7 +157,7 @@ header {
 .card button {
   background-color: #44526e;
   color: #fff;
-  margin-left: 2vh;
+  /*margin-left: 2vh;*/
   margin-top: 2vh;
   padding: 10px 20px;
   border: none;
@@ -173,9 +174,11 @@ header {
   margin-bottom: 40px;
 }
 
+/*
 #todo-form img {
   margin-left: 12vh;
 }
+*/
 
 ul {
   list-style: none;
@@ -223,6 +226,18 @@ footer {
 .right img {
   width: 4vh;
 }
+
+#unmute-button { 
+  visibility: hidden;
+  background-color: #44526e;
+  color: #fff;
+  margin: 0 auto;
+  padding: 0;
+  line-height: 3vh;
+  text-align: center;
+  width: 3vh;
+}
+
 /* fine footer */
 
 /*
