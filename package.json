@@ -1,6 +1,6 @@
 {
   "name": "todomato",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Applicazione che combina una lista ToDo con la tecnica del pomodoro.",
   "main": "src/todomato.js",
   "lint-staged": {
