@@ -2,7 +2,7 @@
 
 # Todomato
 
-- [**ToDoMato**](./src/todomato.html)
+- [**ToDoMato**](./src/index.html)
 
 Una WebApp che combina una ToDoList con la tecnica del pomodoro per gestire le proprie attività impostando dei timer.
 
