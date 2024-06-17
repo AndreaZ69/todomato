@@ -141,6 +141,7 @@ header {
   padding: 50px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 40px;
   /*padding-left: 3vh;*/
 }
 
@@ -172,6 +173,7 @@ header {
 
 #todo-form {
   margin-bottom: 40px;
+  margin-right: 40px;
 }
 
 /*
