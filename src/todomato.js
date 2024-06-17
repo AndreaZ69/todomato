@@ -44,42 +44,52 @@ function addTodoToDOM(todo) {
   const timerControls = document.createElement('div');
   timerControls.className = 'timer-controls';
 
-  const createTimerButton = document.createElement('button');
-  createTimerButton.textContent = 'Create Timer';
-  createTimerButton.addEventListener('click', function () {
-    if (!todo.timer) {
-      const timer = controllerTimer.create(25, true);
-      todo.timer = timer;
-      updateTimerInDOM(todo, timerSpan);
-    }
-  });
-
-  const pauseButton = document.createElement('button');
-  pauseButton.textContent = 'Pause';
-  pauseButton.addEventListener('click', function () {
-    if (todo.timer) {
-      controllerTimer.pause(todo.timer);
-    }
-  });
-
   const resumeButton = document.createElement('button');
-  resumeButton.textContent = 'Resume';
+  const pauseButton = document.createElement('button');
+  const editButton = document.createElement('button');
+  const deleteButton = document.createElement('button');
+  const completeButton = document.createElement('button'); 
+  const createTimerButton = document.createElement('button');
+
+  resumeButton.style.display = 'none';
+  const resumeImg = document.createElement('img');
+  resumeImg.src = './img/clock-02.svg';
+  resumeImg.width = 20;
+  resumeImg.height = 20;
+  resumeImg.alt = 'Resume'; 
+  resumeButton.appendChild(resumeImg);
   resumeButton.addEventListener('click', function () {
+    resumeButton.style.display = 'none';
+    pauseButton.style.display = 'block';
     if (todo.timer) {
       controllerTimer.resume(todo.timer);
     }
   });
 
-  const deleteButton = document.createElement('button');
-  deleteButton.textContent = 'Delete';
-  deleteButton.addEventListener('click', function () {
-    controllerTodo.deleteTodo(todo.todoId);
-    li.remove();
+  pauseButton.style.display = 'none';
+  const pauseImg = document.createElement('img');
+  pauseImg.src = './img/pause-02.svg';
+  pauseImg.width = 20;
+  pauseImg.height = 20;
+  pauseImg.alt = 'Pause'; 
+  pauseButton.appendChild(pauseImg);
+  pauseButton.addEventListener('click', function () {
+    resumeButton.style.display = 'block';
+    pauseButton.style.display = 'none';
+    if (todo.timer) {
+      controllerTimer.pause(todo.timer);
+    }
   });
 
-  const editButton = document.createElement('button');
-  editButton.textContent = 'Edit';
+  editButton.style.display = 'none';
+  const editImg = document.createElement('img');
+  editImg.src = './img/editButton-02.svg';
+  editImg.width = 20;
+  editImg.height = 20;
+  editImg.alt = 'Edit'; 
+  editButton.appendChild(editImg);
   editButton.addEventListener('click', function () {
+    controllerTimer.pause(todo.timer);
     const newName = prompt('Enter new name:', todo.nomeAttivita);
     const newDescription = prompt('Enter new description:', todo.description);
 
@@ -92,13 +102,52 @@ function addTodoToDOM(todo) {
       controllerTodo.updateTodoDescription(todo.todoId, newDescription);
       descriptionSpan.textContent = `: ${newDescription}`;
     }
+    controllerTimer.resume(todo.timer);
   });
 
-  const completeButton = document.createElement('button');
-  completeButton.textContent = 'Complete';
+  deleteButton.style.display = 'none';
+  const deleteImg = document.createElement('img');
+  deleteImg.src = './img/eraseButton-03.svg';
+  deleteImg.width = 20;
+  deleteImg.height = 20;
+  deleteImg.alt = 'Delete'; 
+  deleteButton.appendChild(deleteImg);
+  deleteButton.addEventListener('click', function () {
+    controllerTodo.deleteTodo(todo.todoId);
+    li.remove();
+  });
+
+  completeButton.style.display = 'none';
+  const completeImg = document.createElement('img');
+  completeImg.src = './img/checkCompleted-02.svg';
+  completeImg.width = 20;
+  completeImg.height = 20;
+  completeImg.alt = 'Complete'; 
+  completeButton.appendChild(completeImg);
   completeButton.addEventListener('click', function () {
     moveTodoToCompleted(todo);
     li.remove();
+  });
+
+ 
+  const playImg = document.createElement('img');
+  playImg.src = './img/play-02.svg';
+  playImg.width = 20;
+  playImg.height = 20;
+  playImg.alt = 'Create Timer'; 
+  createTimerButton.appendChild(playImg);
+  createTimerButton.addEventListener('click', function () {
+    pauseButton.style.display = 'block';
+    deleteButton.style.display = 'block';
+    editButton.style.display = 'block';
+    completeButton.style.display = 'block';
+
+    createTimerButton.style.display = 'none';
+    if (!todo.timer) {
+      const timer = controllerTimer.create(25, true);
+      todo.timer = timer;
+      updateTimerInDOM(todo, timerSpan);
+    }
   });
 
   timerControls.appendChild(createTimerButton);
