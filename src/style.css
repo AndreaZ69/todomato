@@ -277,9 +277,10 @@ input {
 }
 
 .mascotte {
-  width: 80vh;
-  margin-left: 32.30%;
-  margin-top: 5vh;
+  width: 45vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 hr {
