@@ -201,6 +201,13 @@ function moveTodoToCompleted(todo) {
   localStorage.setItem('todosCompleted', JSON.stringify(todo));
 }
 
+function loadTodosFromLocalStorage() {
+  const todos = JSON.parse(localStorage.getItem('todos')) || [];
+  todos.forEach(todo => addTodoToDOM(todo));
+}
+
+window.onload = loadTodosFromLocalStorage;
+
 //PEDRO!
 const videoElement = document.getElementById('video-tag');
 const unmuteButton = document.getElementById('unmute-button');
