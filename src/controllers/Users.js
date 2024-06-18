@@ -24,6 +24,9 @@ class ControllerUsers {
   getEmail(email, password) {
     return this.users.find(user => user.email === email && user.password === password);
   }
+  userExists(email) {
+    return this.users.find(user => user.email === email);
+  }
 }
 
 export { ControllerUsers };
