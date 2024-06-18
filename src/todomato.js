@@ -8,7 +8,14 @@ const todoNameInput = document.getElementById('todo-name');
 const todoDescriptionInput = document.getElementById('todo-description');
 const todoList = document.getElementById('todo-list');
 const completedList = document.getElementById('completed-list');
-const logoutButton = document.getElementById('logout-btn');
+const logoutButton = document.getElementById('btnLogOut');
+
+logoutButton.addEventListener('click', () => {
+  localStorage.removeItem('userLogged');
+  setTimeout(() => {
+    window.location.href = 'index.html';
+  }, 2000);
+});
 
 const controllerTodo = new ControllerTodo();
 const controllerTimer = new ControllerTimer();
@@ -166,10 +173,9 @@ function addTodoToDOM(todo) {
     if (todo.timer && !todo.timer.isPaused) {
       const remainingTime = controllerTimer.read(todo.timer);
       if (remainingTime.minutes > 0 || remainingTime.seconds > 0) {
-        if(remainingTime.seconds < 10){
+        if (remainingTime.seconds < 10) {
           timerSpan.textContent = ` (${remainingTime.minutes} : 0${remainingTime.seconds})`;
-        }
-        else{
+        } else {
           timerSpan.textContent = ` (${remainingTime.minutes} : ${remainingTime.seconds})`;
         }
       } else {
