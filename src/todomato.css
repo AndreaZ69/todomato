@@ -172,9 +172,8 @@ header {
   display: block;
   margin: auto;
 }
+
 .timer-controls button {
-  width: auto;
-  margin: auto;
   margin-top: 10%;
   margin-bottom: 10%;
 }
