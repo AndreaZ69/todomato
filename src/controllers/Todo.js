@@ -2,18 +2,24 @@
 
 import { ModelTodo } from '../models/Todo.js';
 
-
 class ControllerTodo {
-  #todo = [];
+  constructor() {
+    this.todo = JSON.parse(localStorage.getItem('todos')) ?? [];
+  }
+
+  saveTodos() {
+    localStorage.setItem('todos', JSON.stringify(this.todo));
+  }
 
   addTodo(nomeAttivita, description) {
     const todo = new ModelTodo(nomeAttivita, description);
-    this.#todo.push(todo);
+    this.todo.push(todo);
+    this.saveTodos();
     return todo;
   }
 
   readTodo(todoId) {
-    return this.#todo.find(element => element.todoId === todoId);
+    return this.todo.find(element => element.todoId === todoId);
   }
 
   updateTodoName(todoId, newName) {
@@ -31,7 +37,15 @@ class ControllerTodo {
   }
 
   deleteTodo(todoId) {
-    this.#todo = this.#todo.filter(element => element.todoId !== todoId);
+    const index = this.todo.indexOf(todoId);
+    this.todo.splice(index, 1);
+    localStorage.setItem('todos', JSON.stringify(this.todo));
+  }
+
+  deleteTodoCompleted(todoId) {
+    const index = this.todo.indexOf(todoId);
+    this.todo.splice(index, 1);
+    localStorage.setItem('todosCompleted', JSON.stringify(this.todo));
   }
 }
 
