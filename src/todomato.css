@@ -277,3 +277,10 @@ footer {
   }
 }
 */
+.loggedUserText {
+  text-transform: uppercase;
+}
+
+.loggedUserText b {
+  color: #f05c56;
+}

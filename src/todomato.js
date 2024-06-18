@@ -17,6 +17,21 @@ logoutButton.addEventListener('click', () => {
   }, 2000);
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  let currentUser = localStorage.getItem('userLogged');
+  const container = document.getElementById('containerId');
+
+  if (!!currentUser) {
+    let objectUser = JSON.parse(currentUser);
+    let loggedUserName = objectUser.username;
+    const loggedUserNamep = document.createElement('p');
+    loggedUserNamep.classList.add('loggedUserText');
+
+    loggedUserNamep.innerHTML = 'Cosa facciamo oggi <b>' + loggedUserName + '</b>?';
+    container.appendChild(loggedUserNamep);
+  }
+});
+
 const controllerTodo = new ControllerTodo();
 const controllerTimer = new ControllerTimer();
 
