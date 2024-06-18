@@ -72,6 +72,6 @@ Introdotto nella v2.0.0
 Questo progetto è sviluppato da:
 
 - **Alessio Di Noto** - [GitHub](https://github.com/AlessioDiNoto)
-- **AndreaZ69** - [GitHub](https://github.com/AndreaZ69)
+- **Andrea Militano** - [GitHub](https://github.com/AndreaZ69)
 - **Emanuele Fava** - [GitHub](https://github.com/EmanueleFava)
 - **Francesco Urso** - [GitHub](https://github.com/francesco-urso)
