@@ -11,6 +11,16 @@ document.getElementById('registerForm')?.addEventListener('submit', function (e)
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
 
+  if (!username || !name || !email || !password) {
+    alert('Tutti i campi sono obbligatori.');
+    return;
+  }
+
+  if (userRegister.userExists(email)) {
+    alert(`L'utente esiste già`);
+    return;
+  }
+
   userRegister.createUser(username, name, email, password);
   document.getElementById('registerMessage').innerText = 'Utente registrato!';
   document.getElementById('registerForm').reset();

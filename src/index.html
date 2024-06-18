@@ -10,10 +10,10 @@
   </head>
   <body>
     <header class="header">
-      <nav class="navbar">
+      <nav class="navbar" id="indexNav">
         <div class="logo"><img src="./img/toDoMato.svg" alt="todoMato" /></div>
         <div class="links">
-          <a href="./login.html"><button class="btnLogIn">Login</button></a>
+          <a href="./login.html"><button class="btnLogIn" id="btnLogIn">Login</button></a>
         </div>
       </nav>
     </header>
@@ -26,7 +26,8 @@
             Organizza le tue attività e migliora la tua produttività con il nostro Timer Pomodoro. Lasciati accompagnare
             dal nostro simpatico pomodoro mascotte!
           </p>
-          <a href="./register.html"><button class="btn-primary">Registrati</button></a>
+          <a href="./register.html"><button class="btn-primary" id="btnLogOn">Registrati</button></a>
+          <a href="./todomato.html"><button class="btn-primary" id="btnToDoMato" display="none">ToDoMato</button></a>
         </div>
       </div>
     </section>
@@ -69,6 +70,7 @@
         </video>
       </div>
     </div>
+    <script type="module" src="index.js"></script>
     <footer>
       <div class="left">
         <a href="https://github.com/francesco-urso/todomato">
