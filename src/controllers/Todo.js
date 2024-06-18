@@ -5,10 +5,14 @@ import { ModelTodo } from '../models/Todo.js';
 class ControllerTodo {
   constructor() {
     this.todo = JSON.parse(localStorage.getItem('todos')) ?? [];
+    this.todoCompleted = JSON.parse(localStorage.getItem('todosCompleted')) ?? [];
   }
 
   saveTodos() {
     localStorage.setItem('todos', JSON.stringify(this.todo));
+  }
+  saveTodosCompleted() {
+    localStorage.setItem('todosCompleted', JSON.stringify(this.todoCompleted));
   }
 
   addTodo(nomeAttivita, description) {
@@ -16,6 +20,16 @@ class ControllerTodo {
     this.todo.push(todo);
     this.saveTodos();
     return todo;
+  }
+
+  moveTodoToCompleted(todoId) {
+    const completedList = document.getElementById('completed-list');
+    const completedItem = document.createElement('li');
+    completedItem.textContent = `${todoId.nomeAttivita}: ${todoId.description}`;
+    completedList.appendChild(completedItem);
+    this.todoCompleted.push(todoId);
+    this.saveTodosCompleted();
+    this.deleteTodo(todoId);
   }
 
   readTodo(todoId) {
