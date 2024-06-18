@@ -4,7 +4,7 @@ import { ModelTodo } from '../models/Todo.js';
 
 class ControllerTodo {
   constructor() {
-    this.todo = JSON.parse(localStorage.getItem('todos')) ?? [];
+    this.todo = this.caricaTask();
   }
 
   saveTodos() {
@@ -15,6 +15,11 @@ class ControllerTodo {
     const todo = new ModelTodo(nomeAttivita, description);
     this.todo.push(todo);
     this.saveTodos();
+    return todo;
+  }
+
+  caricaTask() {
+    const todo = JSON.parse(localStorage.getItem('todosCompleted')) ?? [];
     return todo;
   }
 
