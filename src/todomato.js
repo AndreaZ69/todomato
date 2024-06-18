@@ -188,34 +188,35 @@ function moveTodoToCompleted(todo) {
   const completedItem = document.createElement('li');
   completedItem.textContent = `${todo.nomeAttivita}: ${todo.description}`;
   completedList.appendChild(completedItem);
+  controllerTodo.deleteTodo(todo);
+  localStorage.setItem('todosCompleted', JSON.stringify(todo));
 }
-
 
 //PEDRO!
 const videoElement = document.getElementById('video-tag');
 const unmuteButton = document.getElementById('unmute-button');
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   let typedWord = '';
-  document.addEventListener('keydown', function(event) {
+  document.addEventListener('keydown', function (event) {
     typedWord += event.key.toLowerCase();
     if (typedWord.includes('pedro')) {
       const videoSource = document.getElementById('video-source');
       videoSource.src = './video/pedro.mp4';
       unmuteButton.style.visibility = 'visible';
-      videoElement.load(); 
-      videoElement.play(); 
+      videoElement.load();
+      videoElement.play();
       typedWord = '';
     }
   });
 });
 
-unmuteButton.addEventListener('click', function() {
+unmuteButton.addEventListener('click', function () {
   if (videoElement.muted) {
     videoElement.muted = false;
-    unmuteButton.textContent = "🔊";
+    unmuteButton.textContent = '🔊';
   } else {
     videoElement.muted = true;
-    unmuteButton.textContent = "🔈";
+    unmuteButton.textContent = '🔈';
   }
 });
