@@ -7,7 +7,7 @@ const todoForm = document.getElementById('todo-form');
 const todoNameInput = document.getElementById('todo-name');
 const todoDescriptionInput = document.getElementById('todo-description');
 const todoList = document.getElementById('todo-list');
-const completedList = document.getElementById('completed-list');
+//const completedList = document.getElementById('completed-list');
 const logoutButton = document.getElementById('btnLogOut');
 
 logoutButton.addEventListener('click', () => {
@@ -132,7 +132,7 @@ function addTodoToDOM(todo) {
   completeImg.alt = 'Complete';
   completeButton.appendChild(completeImg);
   completeButton.addEventListener('click', function () {
-    moveTodoToCompleted(todo);
+    controllerTodo.moveTodoToCompleted(todo);
     li.remove();
   });
 
@@ -185,7 +185,7 @@ function addTodoToDOM(todo) {
           timerSpan.textContent = ` (${newTimeRemaining.minutes} : ${newTimeRemaining.seconds})`;
         } else {
           timerSpan.textContent = " (Time's up!)";
-          moveTodoToCompleted(todo);
+          controllerTodo.moveTodoToCompleted(todo);
           clearInterval(intervalId);
         }
       }
@@ -193,20 +193,42 @@ function addTodoToDOM(todo) {
   }, 1000);
 }
 
-function moveTodoToCompleted(todo) {
-  const completedItem = document.createElement('li');
-  completedItem.textContent = `${todo.nomeAttivita}: ${todo.description}`;
-  completedList.appendChild(completedItem);
-  controllerTodo.deleteTodo(todo);
-  localStorage.setItem('todosCompleted', JSON.stringify(todo));
-}
-
-function loadTodosFromLocalStorage() {
+function loadTodos() {
   const todos = JSON.parse(localStorage.getItem('todos')) || [];
-  todos.forEach(todo => addTodoToDOM(todo));
+
+  // Memorizza gli ID dei todos già aggiunti
+  const addedTodoIds = new Set();
+
+  // Ottieni l'elemento genitore dove aggiungere i todos
+  const todoList = document.getElementById('todo-list');
+
+  // Per ogni todo nel localStorage
+  todos.forEach(todo => {
+    // Verifica se questo todo è già stato aggiunto
+    if (!addedTodoIds.has(todo.id)) {
+      // Aggiungi il todo al DOM
+      addTodoToDOM(todo);
+      // Aggiungi l'ID del todo all'insieme di quelli già aggiunti
+      addedTodoIds.add(todo.id);
+    }
+  });
 }
 
-window.onload = loadTodosFromLocalStorage;
+window.onload = loadTodos;
+
+// function loadTodos() {
+//   const todos = JSON.parse(localStorage.getItem('todos')) || [];
+//   todos.forEach(todo => addTodoToDOM(todo));
+// }
+
+// window.onload = loadTodos;
+
+// function loadCompleted() {
+//   const todos = JSON.parse(localStorage.getItem('todosCompleted')) || [];
+//   todos.forEach(todo => controllerTodo.moveTodoToCompleted(todo));
+// }
+
+// window.onload = loadCompleted;
 
 //PEDRO!
 const videoElement = document.getElementById('video-tag');
