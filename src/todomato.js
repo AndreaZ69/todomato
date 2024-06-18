@@ -97,8 +97,8 @@ function addTodoToDOM(todo) {
   editButton.appendChild(editImg);
   editButton.addEventListener('click', function () {
     controllerTimer.pause(todo.timer);
-    const newName = prompt('Enter new name:', todo.nomeAttivita);
-    const newDescription = prompt('Enter new description:', todo.description);
+    const newName = prompt('Inserisci un nuovo nome attività:', todo.nomeAttivita);
+    const newDescription = prompt('Inserisci una nuova descrizione:', todo.description);
 
     if (newName !== null) {
       controllerTodo.updateTodoName(todo.todoId, newName);
