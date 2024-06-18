@@ -4,7 +4,7 @@ import { ModelTodo } from '../models/Todo.js';
 
 class ControllerTodo {
   constructor() {
-    this.todo = JSON.parse(localStorage.getItem('todosCompleted')) ?? [];
+    this.todo = JSON.parse(localStorage.getItem('todos')) ?? [];
   }
 
   saveTodos() {
