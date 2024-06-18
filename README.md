@@ -55,6 +55,16 @@ Introdotto nella v2.0.0
 
 1. **Gestione Attività e Timer**: Consente agli utenti di gestire le attività e i timer direttamente dall'interfaccia utente.
 
+Introdotto nella v2.1.0
+
+### TodoMato
+
+1. **Pulsante logout**: Consente agli utenti di poter effettuare il logout.
+
+### Login
+
+1. **Login**: Salvataggio della sessione utente.
+
 ## Struttura del Progetto
 
 - `src/controllers/Timer.js`: Contiene la logica del controller per la gestione dei timer.
