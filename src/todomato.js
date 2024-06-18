@@ -166,7 +166,12 @@ function addTodoToDOM(todo) {
     if (todo.timer && !todo.timer.isPaused) {
       const remainingTime = controllerTimer.read(todo.timer);
       if (remainingTime.minutes > 0 || remainingTime.seconds > 0) {
-        timerSpan.textContent = ` (${remainingTime.minutes} : ${remainingTime.seconds})`;
+        if(remainingTime.seconds < 10){
+          timerSpan.textContent = ` (${remainingTime.minutes} : 0${remainingTime.seconds})`;
+        }
+        else{
+          timerSpan.textContent = ` (${remainingTime.minutes} : ${remainingTime.seconds})`;
+        }
       } else {
         if (todo.timer.isPomodoro) {
           todo.timer = controllerTimer.nextPomodoroSession(todo.timer);
