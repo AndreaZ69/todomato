@@ -1,0 +1,106 @@
+/** @format */
+
+@import url(../../style.css);
+
+#loginFormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  margin-top: 20vh;
+}
+
+#loginBlock {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  box-sizing: border-box;
+  text-align: left;
+  color: #262b36;
+}
+
+#loginBlock h2 {
+  text-align: center;
+  color: #262b36;
+  margin-bottom: 20px;
+}
+
+#loginBlock a {
+  text-decoration: none;
+  color: #262b36;
+}
+
+#loginBlock p {
+  text-align: center;
+}
+
+#loginForm label {
+  display: block;
+  margin-top: 10px;
+}
+
+#loginForm input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#loginForm button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #262b36;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#loginForm button:hover {
+  background-color: #3fbaea;
+}
+
+#loginMessage {
+  text-align: center;
+  margin-top: 20px;
+  color: #262b36;
+}
+
+#loginForm input::placeholder {
+  color: #aaa;
+  opacity: 1;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 60px;
+  margin-bottom: 10px;
+  padding: 20px 0px;
+  width: 100%;
+  border-top: 2px solid #262b36;
+}
+
+.left,
+.center,
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.left img,
+.center img,
+.right img {
+  width: 4vh;
+}

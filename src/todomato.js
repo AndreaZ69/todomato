@@ -13,7 +13,7 @@ const logoutButton = document.getElementById('btnLogOut');
 logoutButton.addEventListener('click', () => {
   localStorage.removeItem('userLogged');
   setTimeout(() => {
-    window.location.href = 'index.html';
+    window.location.href = './pages/home/index.html';
   }, 2000);
 });
 
@@ -75,7 +75,7 @@ function addTodoToDOM(todo) {
 
   resumeButton.style.display = 'none';
   const resumeImg = document.createElement('img');
-  resumeImg.src = './img/clock-02.svg';
+  resumeImg.src = './assets/img/clock-02.svg';
   resumeImg.width = 20;
   resumeImg.height = 20;
   resumeImg.alt = 'Resume';
@@ -90,7 +90,7 @@ function addTodoToDOM(todo) {
 
   pauseButton.style.display = 'none';
   const pauseImg = document.createElement('img');
-  pauseImg.src = './img/pause-02.svg';
+  pauseImg.src = './assets/img/pause-02.svg';
   pauseImg.width = 20;
   pauseImg.height = 20;
   pauseImg.alt = 'Pause';
@@ -105,7 +105,7 @@ function addTodoToDOM(todo) {
 
   editButton.style.display = 'none';
   const editImg = document.createElement('img');
-  editImg.src = './img/editButton-02.svg';
+  editImg.src = './assets/img/editButton-02.svg';
   editImg.width = 20;
   editImg.height = 20;
   editImg.alt = 'Edit';
@@ -129,7 +129,7 @@ function addTodoToDOM(todo) {
 
   deleteButton.style.display = 'none';
   const deleteImg = document.createElement('img');
-  deleteImg.src = './img/eraseButton-03.svg';
+  deleteImg.src = './assets/img/eraseButton-03.svg';
   deleteImg.width = 20;
   deleteImg.height = 20;
   deleteImg.alt = 'Delete';
@@ -141,7 +141,7 @@ function addTodoToDOM(todo) {
 
   completeButton.style.display = 'none';
   const completeImg = document.createElement('img');
-  completeImg.src = './img/checkCompleted-02.svg';
+  completeImg.src = './assets/img/checkCompleted-02.svg';
   completeImg.width = 20;
   completeImg.height = 20;
   completeImg.alt = 'Complete';
@@ -152,7 +152,7 @@ function addTodoToDOM(todo) {
   });
 
   const playImg = document.createElement('img');
-  playImg.src = './img/play-02.svg';
+  playImg.src = './assets/img/play-02.svg';
   playImg.width = 20;
   playImg.height = 20;
   playImg.alt = 'Create Timer';
@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function () {
     typedWord += event.key.toLowerCase();
     if (typedWord.includes('pedro')) {
       const videoSource = document.getElementById('video-source');
-      videoSource.src = './video/pedro.mp4';
+      videoSource.src = './assets/video/pedro.mp4';
       unmuteButton.style.visibility = 'visible';
       videoElement.load();
       videoElement.play();

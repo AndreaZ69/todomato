@@ -1,4 +1,4 @@
-/** @format 3889*/
+/** @format */
 
 const buttonLogIn = document.getElementById('btnLogIn');
 const buttonLogOn = document.getElementById('btnLogOn');
