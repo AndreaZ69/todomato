@@ -1,0 +1,106 @@
+/** @format */
+
+@import url(../../style.css);
+
+#registerFormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  margin-top: 20vh;
+}
+
+#registerBlock {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  box-sizing: border-box;
+  text-align: left;
+  color: #262b36;
+}
+
+#registerBlock h2 {
+  text-align: center;
+  color: #262b36;
+  margin-bottom: 20px;
+}
+
+#registerBlock a {
+  text-decoration: none;
+  color: #262b36;
+}
+
+#registerBlock p {
+  text-align: center;
+}
+
+#registerBlock label {
+  display: block;
+  margin-top: 10px;
+}
+
+#registerForm input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#registerForm button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #262b36;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#registerForm button:hover {
+  background-color: #3fbaea;
+}
+
+#registerMessage {
+  text-align: center;
+  margin-top: 20px;
+  color: #262b36;
+}
+
+#registerForm input::placeholder {
+  color: #aaa;
+  opacity: 1;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 60px;
+  margin-bottom: 10px;
+  padding: 20px 0px;
+  width: 100%;
+  border-top: 2px solid #262b36;
+}
+
+.left,
+.center,
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.left img,
+.center img,
+.right img {
+  width: 4vh;
+}

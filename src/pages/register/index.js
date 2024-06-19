@@ -1,6 +1,6 @@
 /** @format */
 
-import { ControllerUsers } from './controllers/Users.js';
+import { ControllerUsers } from '../../controllers/Users.js';
 
 const userRegister = new ControllerUsers();
 
@@ -26,6 +26,6 @@ document.getElementById('registerForm')?.addEventListener('submit', function (e)
   document.getElementById('registerForm').reset();
 
   setTimeout(() => {
-    window.location.href = 'index.html';
+    window.location.href = '../home/index.html';
   }, 2000);
 });

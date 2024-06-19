@@ -1,6 +1,6 @@
 /** @format */
 
-import { ControllerUsers } from './controllers/Users.js';
+import { ControllerUsers } from '../../controllers/Users.js';
 
 const userController = new ControllerUsers();
 
@@ -18,12 +18,12 @@ document.getElementById('loginForm')?.addEventListener('submit', function (e) {
   }
 
   if (user) {
-    document.getElementById('loginMessage').innerText = 'Login successful!';
+    document.getElementById('loginMessage').innerText = 'Bentornato!';
     localStorage.setItem('userLogged', JSON.stringify(user));
     setTimeout(() => {
-      window.location.href = 'todomato.html';
+      window.location.href = '../../todomato.html';
     }, 2000);
   } else {
-    document.getElementById('loginMessage').innerText = 'Invalid credentials';
+    document.getElementById('loginMessage').innerText = 'Credenziali errate';
   }
 });
