@@ -18,7 +18,7 @@ document.getElementById('loginForm')?.addEventListener('submit', function (e) {
   }
 
   if (user) {
-    document.getElementById('loginMessage').innerText = 'Bentornato!';
+    document.getElementById('loginMessage').innerText = 'Acceso effettuato!';
     localStorage.setItem('userLogged', JSON.stringify(user));
     setTimeout(() => {
       window.location.href = '../../todomato.html';

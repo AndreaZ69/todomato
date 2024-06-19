@@ -25,7 +25,14 @@ document.getElementById('registerForm')?.addEventListener('submit', function (e)
   document.getElementById('registerMessage').innerText = 'Utente registrato!';
   document.getElementById('registerForm').reset();
 
-  setTimeout(() => {
-    window.location.href = '../home/index.html';
-  }, 2000);
+  const user = userRegister.getEmail(email, password);
+
+  if (user) {
+    localStorage.setItem('userLogged', JSON.stringify(user));
+    document.getElementById('registerMessage').innerText += ' Benvenuto!';
+    
+    setTimeout(() => {
+      window.location.href = '../home/index.html';
+    }, 2000);
+  }
 });
