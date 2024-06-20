@@ -34,10 +34,10 @@ class ControllerTodo {
     this.saveTodosCompleted();
     this.deleteTodo(todo.todoId);
 
-    completeImg.src = './img/eraseButton-03.svg';
+    completeImg.src = './assets/img/eraseButton-03.svg';
     completeImg.width = 20;
     completeImg.height = 20;
-    completeImg.alt = 'Complete';
+    completeImg.alt = 'Elimina';
 
     completedList.appendChild(completedItem);
     completeButton.appendChild(completeImg);
