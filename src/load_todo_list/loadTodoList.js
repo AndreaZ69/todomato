@@ -2,24 +2,24 @@
 
 function loadTodos(controllerTodo, controllerTimer, addTodoToDOM) {
   const todos = JSON.parse(localStorage.getItem('todos')) || [];
-  const addedTodoIds = new Set();
+  const currentUser = JSON.parse(localStorage.getItem('userLogged'));
+  const userId = currentUser.id;
 
   todos.forEach(todo => {
-    if (!addedTodoIds.has(todo.todoId)) {
+    if (todo.userId === userId) {
       addTodoToDOM(todo, controllerTodo, controllerTimer);
-      addedTodoIds.add(todo.todoId);
     }
   });
 }
 
 function loadCompleted(controllerTodo) {
-  const todos = JSON.parse(localStorage.getItem('todosCompleted')) || [];
-  const addedTodoIds = new Set();
+  const todosCompleted = JSON.parse(localStorage.getItem('todosCompleted')) || [];
+  const currentUser = JSON.parse(localStorage.getItem('userLogged'));
+  const userId = currentUser.id;
 
-  todos.forEach(todo => {
-    if (!addedTodoIds.has(todo.todoId)) {
+  todosCompleted.forEach(todo => {
+    if (todo.userId === userId) {
       controllerTodo.moveTodoToCompleted(todo);
-      addedTodoIds.add(todo.todoId);
     }
   });
 }

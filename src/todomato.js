@@ -1,9 +1,9 @@
 /** @format */
 
-import { addTodoToDOM } from './add_tido_to_dom/addTodoToDOM.js';
+import { addTodoToDOM } from './add_todo_to_dom/addTodoToDOM.js';
 import { ControllerTimer } from './controllers/Timer.js';
 import { ControllerTodo } from './controllers/Todo.js';
-import { loadTodos, loadCompleted } from './load_todo_list/loatTodoList.js';
+import { loadTodos, loadCompleted } from './load_todo_list/loadTodoList.js';
 
 const todoForm = document.getElementById('todo-form');
 const todoNameInput = document.getElementById('todo-name');
