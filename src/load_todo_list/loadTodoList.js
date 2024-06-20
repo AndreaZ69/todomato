@@ -5,9 +5,12 @@ function loadTodos(controllerTodo, controllerTimer, addTodoToDOM) {
   const currentUser = JSON.parse(localStorage.getItem('userLogged'));
   const userId = currentUser.id;
 
+  const addedTodoIds = new Set();
+
   todos.forEach(todo => {
-    if (todo.userId === userId) {
+    if (todo.userId === userId && !addedTodoIds.has(todo.todoId)) {
       addTodoToDOM(todo, controllerTodo, controllerTimer);
+      addedTodoIds.add(todo.todoId);
     }
   });
 }
@@ -17,12 +20,16 @@ function loadCompleted(controllerTodo) {
   const currentUser = JSON.parse(localStorage.getItem('userLogged'));
   const userId = currentUser.id;
 
+  const addedTodoIds = new Set();
+
   todosCompleted.forEach(todo => {
-    if (todo.userId === userId) {
+    if (todo.userId === userId && !addedTodoIds.has(todo.todoId)) {
       controllerTodo.moveTodoToCompleted(todo);
+      addedTodoIds.add(todo.todoId);
     }
   });
 }
 
 export { loadTodos, loadCompleted };
+
 //
