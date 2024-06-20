@@ -7,7 +7,6 @@ const todoForm = document.getElementById('todo-form');
 const todoNameInput = document.getElementById('todo-name');
 const todoDescriptionInput = document.getElementById('todo-description');
 const todoList = document.getElementById('todo-list');
-//const completedList = document.getElementById('completed-list');
 const logoutButton = document.getElementById('btnLogOut');
 
 logoutButton.addEventListener('click', () => {
@@ -214,7 +213,6 @@ function addTodoToDOM(todo) {
   li.appendChild(timerControls);
   todoList.appendChild(li);
 
-  // Update del timer ogni secondo
   const intervalId = setInterval(() => {
     if (todo.timer && !todo.timer.isPaused) {
       const remainingTime = controllerTimer.read(todo.timer);
@@ -242,19 +240,13 @@ function addTodoToDOM(todo) {
 function loadTodos() {
   const todos = JSON.parse(localStorage.getItem('todos')) || [];
 
-  // Memorizza gli ID dei todos già aggiunti
   const addedTodoIds = new Set();
 
-  // Ottieni l'elemento genitore dove aggiungere i todos
   const todoList = document.getElementById('todo-list');
 
-  // Per ogni todo nel localStorage
   todos.forEach(todo => {
-    // Verifica se questo todo è già stato aggiunto
     if (!addedTodoIds.has(todo.id)) {
-      // Aggiungi il todo al DOM
       addTodoToDOM(todo);
-      // Aggiungi l'ID del todo all'insieme di quelli già aggiunti
       addedTodoIds.add(todo.id);
     }
   });
@@ -262,21 +254,6 @@ function loadTodos() {
 
 window.onload = loadTodos;
 
-// function loadTodos() {
-//   const todos = JSON.parse(localStorage.getItem('todos')) || [];
-//   todos.forEach(todo => addTodoToDOM(todo));
-// }
-
-// window.onload = loadTodos;
-
-// function loadCompleted() {
-//   const todos = JSON.parse(localStorage.getItem('todosCompleted')) || [];
-//   todos.forEach(todo => controllerTodo.moveTodoToCompleted(todo));
-// }
-
-// window.onload = loadCompleted;
-
-//PEDRO!
 const videoElement = document.getElementById('video-tag');
 const unmuteButton = document.getElementById('unmute-button');
 

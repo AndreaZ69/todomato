@@ -32,16 +32,6 @@ class ControllerTodo {
     this.deleteTodo(todoId);
   }
 
-  // loadTodoCompleted() {
-  //   const completedList = document.getElementById('completed-list');
-  //   const todoCompleted = JSON.parse(localStorage.getItem('todosCompleted')) || [];
-  //   todoCompleted.forEach(todo => {
-  //     const completedTodo = document.createElement('li');
-  //     completedTodo.textContent = `${todo.nomeAttivita}: ${todo.description}`;
-  //     completedList.appendChild(completedTodo);
-  //   });
-  // }
-
   loadTodoCompleted(userTodosCompleted) {
     const completedList = document.getElementById('completed-list');
     completedList.innerHTML = '';
