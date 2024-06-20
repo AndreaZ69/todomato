@@ -35,13 +35,44 @@ document.addEventListener('DOMContentLoaded', () => {
 const controllerTodo = new ControllerTodo();
 const controllerTimer = new ControllerTimer();
 
+document.addEventListener('DOMContentLoaded', () => {
+  const completedList = document.getElementById('completed-list');
+  completedList.innerHTML = '';
+
+  let currentTodos = localStorage.getItem('todosCompleted');
+  let currentUser = localStorage.getItem('userLogged');
+
+  if (currentUser && currentTodos) {
+    let objectUser = JSON.parse(currentUser);
+    let todosCompleted = JSON.parse(currentTodos);
+
+    let userId = objectUser.id;
+
+    console.log('User ID:', userId);
+
+    let userTodosCompleted = todosCompleted.filter(todo => todo.userId === userId);
+
+    console.log("Todos completati per l'utente:", userTodosCompleted);
+
+    const controllerTodo = new ControllerTodo();
+    controllerTodo.loadTodoCompleted(userTodosCompleted);
+
+    console.log('Caricamento todos completati riuscito!');
+  }
+});
+
 todoForm.addEventListener('submit', function (event) {
   event.preventDefault();
   const nomeAttivita = todoNameInput.value;
   const description = todoDescriptionInput.value;
+  let currentUser = JSON.parse(localStorage.getItem('userLogged'));
+  let userId = currentUser.id;
 
-  const todo = controllerTodo.addTodo(nomeAttivita, description);
+  const todo = controllerTodo.addTodo(nomeAttivita, description, userId);
   addTodoToDOM(todo);
+
+  console.log(todo);
+  console.log('Todo utente Salvato');
 
   todoNameInput.value = '';
   todoDescriptionInput.value = '';

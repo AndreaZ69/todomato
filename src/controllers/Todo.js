@@ -15,8 +15,8 @@ class ControllerTodo {
     localStorage.setItem('todosCompleted', JSON.stringify(this.todoCompleted));
   }
 
-  addTodo(nomeAttivita, description) {
-    const todo = new ModelTodo(nomeAttivita, description);
+  addTodo(nomeAttivita, description, userId) {
+    const todo = new ModelTodo(nomeAttivita, description, userId);
     this.todo.push(todo);
     this.saveTodos();
     return todo;
@@ -30,6 +30,26 @@ class ControllerTodo {
     this.todoCompleted.push(todoId);
     this.saveTodosCompleted();
     this.deleteTodo(todoId);
+  }
+
+  // loadTodoCompleted() {
+  //   const completedList = document.getElementById('completed-list');
+  //   const todoCompleted = JSON.parse(localStorage.getItem('todosCompleted')) || [];
+  //   todoCompleted.forEach(todo => {
+  //     const completedTodo = document.createElement('li');
+  //     completedTodo.textContent = `${todo.nomeAttivita}: ${todo.description}`;
+  //     completedList.appendChild(completedTodo);
+  //   });
+  // }
+
+  loadTodoCompleted(userTodosCompleted) {
+    const completedList = document.getElementById('completed-list');
+    completedList.innerHTML = '';
+    userTodosCompleted.forEach(todo => {
+      const completedTodo = document.createElement('li');
+      completedTodo.textContent = `${todo.nomeAttivita}: ${todo.description}`;
+      completedList.appendChild(completedTodo);
+    });
   }
 
   readTodo(todoId) {
