@@ -22,26 +22,32 @@ class ControllerTodo {
     return todo;
   }
 
-  moveTodoToCompleted(todoId) {
+  moveTodoToCompleted(todo) {
     const completedList = document.getElementById('completed-list');
     const completedItem = document.createElement('li');
-    completedItem.textContent = `${todoId.nomeAttivita}: ${todoId.description}`;
-    completedList.appendChild(completedItem);
-    this.todoCompleted.push(todoId);
-    this.saveTodosCompleted();
-    this.deleteTodo(todoId);
-  }
+    const completeButton = document.createElement('button');
+    const completeImg = document.createElement('img');
 
-  loadTodoCompleted(userTodosCompleted) {
-    const completedList = document.getElementById('completed-list');
-    completedList.innerHTML = '';
-    userTodosCompleted.forEach(todo => {
-      const completedTodo = document.createElement('li');
-      completedTodo.textContent = `${todo.nomeAttivita}: ${todo.description}`;
-      completedList.appendChild(completedTodo);
+    completedItem.textContent = `${todo.nomeAttivita}: ${todo.description}`;
+
+    this.todoCompleted.push(todo);
+    this.saveTodosCompleted();
+    this.deleteTodo(todo.todoId);
+
+    completeImg.src = './img/eraseButton-03.svg';
+    completeImg.width = 20;
+    completeImg.height = 20;
+    completeImg.alt = 'Complete';
+
+    completedList.appendChild(completedItem);
+    completeButton.appendChild(completeImg);
+    completedItem.appendChild(completeButton);
+
+    completeButton.addEventListener('click', () => {
+      this.deleteTodoCompleted(todo.todoId);
+      completedItem.remove();
     });
   }
-
   readTodo(todoId) {
     return this.todo.find(element => element.todoId === todoId);
   }
@@ -61,16 +67,23 @@ class ControllerTodo {
   }
 
   deleteTodo(todoId) {
-    const index = this.todo.indexOf(todoId);
-    this.todo.splice(index, 1);
-    localStorage.setItem('todos', JSON.stringify(this.todo));
+    this.todo = this.todo.filter(todo => todo.todoId !== todoId);
+    this.saveTodos();
   }
 
   deleteTodoCompleted(todoId) {
-    const index = this.todo.indexOf(todoId);
-    this.todo.splice(index, 1);
-    localStorage.setItem('todosCompleted', JSON.stringify(this.todo));
+    this.todoCompleted = this.todoCompleted.filter(todo => todo.todoId !== todoId);
+    this.saveTodosCompleted();
   }
+
+  // delete(todoId) {
+  //   function onFilter(element) {
+  //     return element.todoId !== todoId;
+  //   }
+
+  //   this.todoCompleted = this.todoCompleted.filter(onFilter)
+
+  // }
 }
 
 export { ControllerTodo };
